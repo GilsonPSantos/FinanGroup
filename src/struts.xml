@@ -1,0 +1,227 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="usuarioaction" extends="struts-default">
+	
+	<action name="usuario.cadastrar" 
+			class="control.UsuarioAction"
+			method="cadastrar">
+		
+		<result name="input">/login.jsp</result> 
+		<result name="success">/login.jsp</result> 
+		<result name="error">/login.jsp</result>	
+	
+	</action>
+	
+	<action name="usuario.login" 
+			class="control.UsuarioAction"
+			method="login">
+		
+		<result name="input">/login.jsp</result> 
+		<result name="login">/usu/telaInicial.jsp</result> 
+		<result name="error">/login.jsp</result>	
+	</action>
+
+	<action name="usuario.logout" 
+			class="control.UsuarioAction"
+			method="logout">
+		<result name="success">/login.jsp</result> 
+	</action>
+	
+	<action name="usuario.alterar" 
+			class="control.UsuarioAction"
+			method="alterar">
+		<result name="success">/usu/alteracaoUsuario.jsp</result> 
+		<result name="error">/usu/alteracaoUsuario.jsp</result>
+	</action>
+	
+	<action name="usuario.linkAlterarUsuario" 
+			class="control.UsuarioAction"
+			method="linkAlterarUsuario">
+		<result name="success">/usu/alteracaoUsuario.jsp</result> 
+	</action>
+	
+	<action name="usuario.linkHome" 
+			class="control.UsuarioAction"
+			method="linkHome">
+		<result name="success">/usu/telaInicial.jsp</result> 
+	</action>
+	
+	<action name="usuario.linkCancelarCadastro" 
+			class="control.UsuarioAction"
+			method="delete">
+		<result name="success">/login.jsp</result> 
+		<result name="error">/usu/telaInicial.jsp</result> 
+	</action>
+	
+	<action name="grupo.cadastrar" 
+			class="control.GrupoAction"
+			method="cadastrar">
+		<result name="error">/usu/telaInicial.jsp</result> 
+		<result name="success">/usu/telaInicial.jsp</result> 
+	</action>
+	
+	<action name="grupo.alterar" 
+			class="control.GrupoAction"
+			method="alterar">
+		<result name="error">/usu/alteracaoGrupo.jsp</result> 
+		<result name="success">/usu/alteracaoGrupo.jsp</result> 
+	</action>
+	
+	<action name="grupo.deletar" 
+			class="control.GrupoAction"
+			method="deletar">
+		<result name="error">/usu/telaInicial.jsp</result> 
+		<result name="success">/usu/telaInicial.jsp</result> 
+	</action>
+	
+	<action name="lancamento.relatorioPdf" 
+			class="control.LancamentoAction"
+			method="relatorioPdf">
+		<result name="error">/usu/telaInicialGrupo.jsp</result> 
+		<result name="success">/usu/telaInicialGrupo.jsp</result> 
+	</action>
+	
+	<action name="lancamento.relatorioPdfIreportDespesas" 
+			class="control.LancamentoAction"
+			method="relatorioPdfIreportDespesas">
+		<result name="error">/usu/telaInicialGrupo.jsp</result> 
+		<result name="success">/usu/telaInicialGrupo.jsp</result> 
+	</action>
+	
+	<action name="lancamento.relatorioPdfIreportReceitas" 
+			class="control.LancamentoAction"
+			method="relatorioPdfIreportReceitas">
+		<result name="error">/usu/telaInicialGrupo.jsp</result> 
+		<result name="success">/usu/telaInicialGrupo.jsp</result> 
+	</action>
+	
+	<action name="lancamento.relatorioCsv" 
+			class="control.LancamentoAction"
+			method="relatorioCsv">
+		<result name="error">/usu/telaInicialGrupo.jsp</result> 
+		<result name="success">/usu/telaInicialGrupo.jsp</result> 
+	</action>
+	
+	<action name="lancamento.alterar" 
+			class="control.LancamentoAction"
+			method="alterar">
+		<result name="error">/usu/alteracaoLancamento.jsp</result> 
+		<result name="success">/usu/alteracaoLancamento.jsp</result> 
+	</action>
+	
+	<action name="lancamento.linkAlterar" 
+			class="control.LancamentoAction"
+			method="linkAlterar">
+		<result name="error">/usu/alteracaoLancamento.jsp</result> 
+		<result name="success">/usu/alteracaoLancamento.jsp</result> 
+	</action>
+	
+	
+	
+	<action name="grupo.linkAlterar" 
+			class="control.GrupoAction"
+			method="linkAlterar">
+		<result name="error">/usu/telaInicial.jsp</result> 
+		<result name="success">/usu/alteracaoGrupo.jsp</result> 
+	</action>
+		
+	<action name="grupo.linkTelaGrupo" 
+			class="control.GrupoAction"
+			method="linkTelaGrupo">
+		<result name="success">/usu/telaInicialGrupo.jsp</result> 
+		<result name="error">/usu/telaInicial.jsp</result> 
+	</action>
+	
+	
+	
+<!-- 	 <action name="lancamento.cadastrar" class="control.LancamentoAction" method="cadastrar"> -->
+<!--         Redirect to another namespace -->
+<!--         <result name="success" type="redirectAction"> -->
+<!--             <param name="actionName">grupo.linkTelaGrupo</param> -->
+<!--             <param name="namespace">usuarioaction</param> -->
+<!--         </result> -->
+<!--         <result name="error">/usu/telaInicialGrupo.jsp</result>  -->
+<!--     </action> -->
+	
+	
+	<action name="lancamento.cadastrar" 
+			class="control.LancamentoAction"
+			method="cadastrar">
+		<result name="success" >/usu/telaInicialGrupo.jsp</result> 
+		<result name="error">/usu/telaInicialGrupo.jsp</result> 
+	</action>
+	
+	<action name="usuario.linkConsultaUsuario" 
+			class="control.UsuarioAction"
+			method="linkConsultaUsuario">
+		<result name="success">/usu/convidarAmigo.jsp</result>  
+	</action>
+
+	<action name="lancamento.delete" 
+			class="control.LancamentoAction"
+			method="delete">
+		<result name="success">/usu/telaInicialGrupo.jsp</result> 
+		<result name="error">/usu/telaInicialGrupo.jsp</result> 
+	</action>
+	
+	
+	
+	
+	
+	
+	<action name="usuario.consultaUsuario" 
+			class="control.UsuarioAction"
+			method="consultaUsuario">
+		
+		<result name="input">/usu/convidarAmigo.jsp</result> 
+		<result name="success">/usu/convidarAmigo.jsp</result> 
+		<result name="error">/usu/convidarAmigo.jsp</result> 
+	</action>
+	
+	<action name="usuario.enviarMensagem" 
+			class="control.UsuarioAction"
+			method="enviarMensagem">
+		
+		<result name="input">/usu/convidarAmigo.jsp</result> 
+		<result name="success">/usu/convidarAmigo.jsp</result> 
+		<result name="error">/usu/convidarAmigo.jsp</result> 
+	</action>
+	
+	<action name="mensagem.aceitarMensagem" 
+			class="control.MensagemAction"
+			method="aceitarMensagem">
+		
+		<result name="input">/usu/telaInicial.jsp</result> 
+		<result name="success">/usu/telaInicial.jsp</result> 
+		<result name="error">/usu/telaInicial.jsp</result> 
+	</action>
+	
+	<action name="mensagem.deletarMensagem" 
+			class="control.MensagemAction"
+			method="deletarMensagem">
+		
+		<result name="input">/usu/telaInicial.jsp</result> 
+		<result name="success">/usu/telaInicial.jsp</result> 
+		<result name="error">/usu/telaInicial.jsp</result> 
+	</action>
+	
+	
+	
+	
+	
+
+</package>
+	
+
+
+
+
+
+
+
+	
+</struts>
